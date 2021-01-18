@@ -1,8 +1,18 @@
 .custom-selects {
+    $select-width: 7rem;
     .custom-select-wrap {
+        margin-bottom: 1rem;
         select {
-            display: none;
+            // display: none;
             max-width: 7rem;
+            height: 1.5rem;
+            display: flex;
+            border: 1px solid palevioletred;
+            color: palevioletred;
+            width: $select-width;
+            background-color: rgba(lightskyblue, 0.15);
+             padding: 10px 20px 10px 10px;
+
         }
         .custom-select {
             color: palevioletred;
@@ -10,6 +20,7 @@
             display: flex;
             border-radius: 1px;
             height: 1.5rem;
+            width: $select-width;
             .placeholder {
                 padding: 10px 20px 10px 10px;
                 border: 1px solid palevioletred;
@@ -32,7 +43,7 @@
                 top: 1.5rem;
                 box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
                 background-color: #fff;
-                z-index: 10;
+                z-index: 30;
                 .option {
                     padding: 10px;
                     transition: all .2s;

@@ -60,20 +60,20 @@ function createCustomSelector() {
         const selectorElement = itemWrap.querySelector('select')
         
         const options = getAllOptions(selectorElement)
-        console.log("wrap: ", options)
         const newSelect = document.createElement('div')
         newSelect.classList.add('custom-select')
         
+        itemWrap.appendChild(newSelect)
         const placeholder = selectorElement.getAttribute('aria-placeholder')
         const placeholderElement = createPlaceholderForSelectElement(placeholder)
-        newSelect.appendChild(placeholderElement)
-
+        
         const optionElements = createOptionsForSelectElement(options)
-
+        
         newSelect.appendChild(optionElements)
         newSelect.addEventListener('click', toggleSelect)
+        newSelect.appendChild(placeholderElement)
+        itemWrap.getElementsByTagName('select')[0].style.display = "none"
         
-        itemWrap.appendChild(newSelect)
     });
 
 }

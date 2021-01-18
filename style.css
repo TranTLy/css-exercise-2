@@ -8,6 +8,12 @@ html {
 .u-title {
   color: palevioletred; }
 
+.custom-components {
+  display: flex;
+  flex-wrap: wrap; }
+  .custom-components section {
+    padding: 1rem; }
+
 .custom-checkboxes .custom-checkbox {
   display: block;
   padding: 0.3rem 0;
@@ -75,53 +81,61 @@ html {
       top: 50%;
       transform: translate(-50%, -50%); }
 
-.custom-selects .custom-select-wrap select {
-  display: none;
-  max-width: 7rem; }
-
-.custom-selects .custom-select-wrap .custom-select {
-  color: palevioletred;
-  position: relative;
-  display: flex;
-  border-radius: 1px;
-  height: 1.5rem; }
-  .custom-selects .custom-select-wrap .custom-select .placeholder {
-    padding: 10px 20px 10px 10px;
+.custom-selects .custom-select-wrap {
+  margin-bottom: 1rem; }
+  .custom-selects .custom-select-wrap select {
+    max-width: 7rem;
+    height: 1.5rem;
+    display: flex;
     border: 1px solid palevioletred;
+    color: palevioletred;
+    width: 7rem;
     background-color: rgba(135, 206, 250, 0.15);
-    width: 100%;
-    position: relative; }
-    .custom-selects .custom-select-wrap .custom-select .placeholder::after {
+    padding: 10px 20px 10px 10px; }
+  .custom-selects .custom-select-wrap .custom-select {
+    color: palevioletred;
+    position: relative;
+    display: flex;
+    border-radius: 1px;
+    height: 1.5rem;
+    width: 7rem; }
+    .custom-selects .custom-select-wrap .custom-select .placeholder {
+      padding: 10px 20px 10px 10px;
+      border: 1px solid palevioletred;
+      background-color: rgba(135, 206, 250, 0.15);
+      width: 100%;
+      position: relative; }
+      .custom-selects .custom-select-wrap .custom-select .placeholder::after {
+        position: absolute;
+        padding-left: 5px;
+        content: "\25BC";
+        font-size: 0.5rem;
+        right: 10px; }
+    .custom-selects .custom-select-wrap .custom-select .options {
+      display: none;
       position: absolute;
-      padding-left: 5px;
-      content: "\25BC";
-      font-size: 0.5rem;
-      right: 10px; }
-  .custom-selects .custom-select-wrap .custom-select .options {
-    display: none;
-    position: absolute;
-    width: 100%;
-    right: 0;
-    top: 1.5rem;
-    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
-    background-color: #fff;
-    z-index: 10; }
-    .custom-selects .custom-select-wrap .custom-select .options .option {
-      padding: 10px;
-      transition: all .2s;
-      cursor: pointer; }
-      .custom-selects .custom-select-wrap .custom-select .options .option:not(:last-child) {
-        border-bottom: 1px solid palevioletred; }
-      .custom-selects .custom-select-wrap .custom-select .options .option.active {
-        color: whitesmoke;
-        background-color: palevioletred; }
-      .custom-selects .custom-select-wrap .custom-select .options .option:hover {
-        background-color: gainsboro;
-        color: palevioletred; }
-  .custom-selects .custom-select-wrap .custom-select.open .options {
-    display: block; }
-  .custom-selects .custom-select-wrap .custom-select.open .placeholder::after {
-    content: "\25B2"; }
+      width: 100%;
+      right: 0;
+      top: 1.5rem;
+      box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
+      background-color: #fff;
+      z-index: 30; }
+      .custom-selects .custom-select-wrap .custom-select .options .option {
+        padding: 10px;
+        transition: all .2s;
+        cursor: pointer; }
+        .custom-selects .custom-select-wrap .custom-select .options .option:not(:last-child) {
+          border-bottom: 1px solid palevioletred; }
+        .custom-selects .custom-select-wrap .custom-select .options .option.active {
+          color: whitesmoke;
+          background-color: palevioletred; }
+        .custom-selects .custom-select-wrap .custom-select .options .option:hover {
+          background-color: gainsboro;
+          color: palevioletred; }
+    .custom-selects .custom-select-wrap .custom-select.open .options {
+      display: block; }
+    .custom-selects .custom-select-wrap .custom-select.open .placeholder::after {
+      content: "\25B2"; }
 
 .custom-toggle {
   width: 50px;

@@ -10,3 +10,11 @@ html {
 .u-title {
     color: palevioletred;
 }
+
+.custom-components {
+    display: flex;
+    flex-wrap: wrap;
+    section {
+        padding: 1rem;
+    }
+}
