@@ -57,9 +57,10 @@ function toggleSelect (e) {
 function createCustomSelector() {
     const selectorWrapElements = document.querySelectorAll(".custom-select-wrap")
     selectorWrapElements.forEach(itemWrap => {
-        const selectorElement = document.querySelector('select')
-
+        const selectorElement = itemWrap.querySelector('select')
+        
         const options = getAllOptions(selectorElement)
+        console.log("wrap: ", options)
         const newSelect = document.createElement('div')
         newSelect.classList.add('custom-select')
         

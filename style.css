@@ -103,7 +103,9 @@ html {
     width: 100%;
     right: 0;
     top: 1.5rem;
-    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3); }
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
+    background-color: #fff;
+    z-index: 10; }
     .custom-selects .custom-select-wrap .custom-select .options .option {
       padding: 10px;
       transition: all .2s;
@@ -120,3 +122,37 @@ html {
     display: block; }
   .custom-selects .custom-select-wrap .custom-select.open .placeholder::after {
     content: "\25B2"; }
+
+.custom-toggle {
+  width: 50px;
+  text-align: center;
+  position: relative;
+  cursor: pointer; }
+  .custom-toggle::before {
+    position: absolute;
+    content: "";
+    width: calc(24px - 2px);
+    height: calc(24px - 2px);
+    border-radius: 50%;
+    background-color: whitesmoke;
+    top: 1px;
+    left: 1px;
+    z-index: 10;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+    transition: all .2s; }
+    .custom-toggle::before:hover {
+      box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); }
+  .custom-toggle::after {
+    position: absolute;
+    content: "";
+    width: 50px;
+    height: 24px;
+    border-radius: 20px;
+    background-color: silver;
+    top: 0;
+    left: 0;
+    box-shadow: inset 0 6px 10px rgba(0, 0, 0, 0.15); }
+  .custom-toggle:checked::before {
+    left: calc(50px - 24px); }
+  .custom-toggle:checked::after {
+    background-color: palevioletred; }
