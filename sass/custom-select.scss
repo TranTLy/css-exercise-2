@@ -1,0 +1,53 @@
+.custom-selects {
+    .custom-select-wrap {
+        select {
+            // display: none;
+        }
+        .custom-select {
+            color: palevioletred;
+            position: relative;
+            display: inline-block;
+            .placeholder {
+                padding: 10px 20px 10px 10px;
+                border: 1px solid palevioletred;
+                background-color: rgba(lightskyblue, 0.2);
+                width: 100%;
+                position: relative;
+                &::after {
+                    position: absolute;
+                    padding-left: 5px;
+                    content: "\25BC";
+                    font-size: 0.5rem;
+                    right: 10px;
+                }
+            }
+            .options {
+                display: none;
+                position: absolute;
+                width: 100%;
+                right: 0;
+                .option {
+                    padding: 10px;
+                    transition: all .2s;
+                    &:not(:last-child) {
+                        border-bottom: 1px solid palevioletred;
+                    }
+    
+                    &.active {
+                        color: lightskyblue;
+                    }
+                }
+            }
+            &.open {
+                .options {
+                    display: block;
+                }
+                .placeholder {
+                    &::after {
+                        content: "\25B2";
+                    }
+                }
+            }
+        }
+    }
+}

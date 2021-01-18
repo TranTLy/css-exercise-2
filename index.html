@@ -7,6 +7,47 @@
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-    Hello
+    <section class="custom-checkboxes">
+        <h2 class="u-title">Custom checkbox</h2>
+        <label class="custom-checkbox" for="color1">
+            <input id="color1" type="checkbox"> Red
+        </label>
+        <label class="custom-checkbox" for="color2">
+            <input id="color2" type="checkbox"> Blue
+        </label>
+        <label class="custom-checkbox" for="color3">
+            <input id="color3" type="checkbox"> Orange
+        </label>
+    </section>
+
+    <section class="custom-radio-btns">
+        <h2 class="u-title">Custom radio button</h2>
+
+        <label class="custom-radio-btn" for="number1">
+            <input id="number1" type="radio"> Ichi
+        </label>
+        <label class="custom-radio-btn" for="number2">
+            <input id="number2" type="radio"> Ni
+        </label>
+        <label class="custom-radio-btn" for="number3">
+            <input id="number3" type="radio"> San
+        </label>
+    </section>
+
+    <section class="custom-selects">
+        <h2 class="u-title">Custom select</h2>
+        <div class="custom-select-wrap">
+            <select name="cars" id="cars" aria-placeholder="Select car">
+                <option value="volvo">Volvo</option>
+                <option value="saab">Saab</option>
+                <option value="mercedes">Mercedes</option>
+                <option value="audi">Audi</option>
+            </select>
+        </div>
+
+
+    </section>
+
+    <script src="./js/custom-selector.js"></script>
 </body>
 </html>

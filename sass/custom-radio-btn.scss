@@ -1,7 +1,7 @@
-$size-checkbox: 30px;
+$size-radio-btn: 30px;
 
-.custom-checkboxes {
-    .custom-checkbox {
+.custom-radio-btns {
+    .custom-radio-btn {
         display: block;
         padding: 0.3rem 0;
         display: flex;
@@ -9,8 +9,8 @@ $size-checkbox: 30px;
         input {
             position: relative;
             cursor: pointer;
-            width: $size-checkbox;
-            height: $size-checkbox;
+            width: $size-radio-btn;
+            height: $size-radio-btn;
             margin-right: 15px;
             &:hover {
                 &::before {
@@ -20,10 +20,11 @@ $size-checkbox: 30px;
             &::before {
                 position: absolute;
                 content: "";
-                width: $size-checkbox;
-                height: $size-checkbox;
+                width: $size-radio-btn;
+                height: $size-radio-btn;
                 background: lightgray;
                 transition: all .2s;
+                border-radius: 50%;
             }
             &:checked {
                 &::before {
@@ -32,13 +33,13 @@ $size-checkbox: 30px;
                 &::after {
                     position: absolute;
                     content: "";
-                    border: solid palevioletred;
-                    border-width: 0 3px 3px 0;
-                    width: 8px;
-                    height: 18px;
-                    left: 32%;
-                    top: 5%;
-                    transform: rotate(45deg);
+                    background-color: palevioletred;
+                    border-radius: 50%;
+                    width: 15px;
+                    height: 15px;
+                    left: 50%;
+                    top: 50%;
+                    transform: translate(-50%, -50%);
                 }
             }
         }
