@@ -29,6 +29,11 @@ function onSelectOption () {
 function createOptionsForSelectElement (options) {
     const optionsWrapElement = document.createElement('div')
     optionsWrapElement.classList.add("options")
+    optionsWrapElement.addEventListener('mouseleave', function(e) {
+        setTimeout(()=>{
+            this.parentNode.classList.remove("open")
+        }, 1000)
+    })
 
     options.map(item => {
         const element = document.createElement('div')
