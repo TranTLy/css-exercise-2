@@ -18,10 +18,10 @@ html {
   display: block;
   padding: 0.3rem 0;
   display: flex;
-  align-items: center; }
+  align-items: center;
+  cursor: pointer; }
   .custom-checkboxes .custom-checkbox input {
     position: relative;
-    cursor: pointer;
     width: 30px;
     height: 30px;
     margin-right: 15px; }
@@ -41,20 +41,20 @@ html {
       content: "";
       border: solid palevioletred;
       border-width: 0 3px 3px 0;
+      transform: rotate(45deg);
       width: 8px;
       height: 18px;
       left: 32%;
-      top: 5%;
-      transform: rotate(45deg); }
+      top: 5%; }
 
 .custom-radio-btns .custom-radio-btn {
   display: block;
   padding: 0.3rem 0;
   display: flex;
-  align-items: center; }
+  align-items: center;
+  cursor: pointer; }
   .custom-radio-btns .custom-radio-btn input {
     position: relative;
-    cursor: pointer;
     width: 30px;
     height: 30px;
     margin-right: 15px; }
@@ -112,6 +112,7 @@ html {
         font-size: 0.5rem;
         right: 10px; }
     .custom-selects .custom-select-wrap .custom-select .options {
+      opacity: 0;
       display: none;
       position: absolute;
       width: 100%;
@@ -119,10 +120,11 @@ html {
       top: 1.5rem;
       box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
       background-color: #fff;
-      z-index: 30; }
+      z-index: 30;
+      transition: all .2s; }
       .custom-selects .custom-select-wrap .custom-select .options .option {
         padding: 10px;
-        transition: all .2s;
+        transition: all 0.2s;
         cursor: pointer; }
         .custom-selects .custom-select-wrap .custom-select .options .option:not(:last-child) {
           border-bottom: 1px solid palevioletred; }
@@ -133,9 +135,49 @@ html {
           background-color: gainsboro;
           color: palevioletred; }
     .custom-selects .custom-select-wrap .custom-select.open .options {
-      display: block; }
+      display: block;
+      -webkit-animation: scale-in-ver-top 0.2s;
+              animation: scale-in-ver-top 0.2s;
+      height: unset;
+      opacity: 1; }
     .custom-selects .custom-select-wrap .custom-select.open .placeholder::after {
       content: "\25B2"; }
+
+@-webkit-keyframes scale-in-ver-top {
+  0% {
+    transform: scaleY(0);
+    transform-origin: 100% 0%;
+    opacity: 1; }
+  100% {
+    transform: scaleY(1);
+    transform-origin: 100% 0%;
+    opacity: 1; } }
+
+@keyframes scale-in-ver-top {
+  0% {
+    transform: scaleY(0);
+    transform-origin: 100% 0%;
+    opacity: 1; }
+  100% {
+    transform: scaleY(1);
+    transform-origin: 100% 0%;
+    opacity: 1; } }
+
+@-webkit-keyframes scale-down-ver-top {
+  0% {
+    transform: scaleY(0);
+    opacity: 1; }
+  100% {
+    transform: scaleY(1);
+    opacity: 0; } }
+
+@keyframes scale-down-ver-top {
+  0% {
+    transform: scaleY(0);
+    opacity: 1; }
+  100% {
+    transform: scaleY(1);
+    opacity: 0; } }
 
 .custom-toggle {
   width: 50px;

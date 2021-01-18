@@ -6,9 +6,9 @@ $size-radio-btn: 30px;
         padding: 0.3rem 0;
         display: flex;
         align-items: center;
+        cursor: pointer;
         input {
             position: relative;
-            cursor: pointer;
             width: $size-radio-btn;
             height: $size-radio-btn;
             margin-right: 15px;
