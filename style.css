@@ -13,7 +13,8 @@ body {
 
 .custom-components {
   display: flex;
-  flex-wrap: wrap; }
+  flex-wrap: wrap;
+  min-height: 90vh; }
   .custom-components section {
     padding: 1rem; }
 
@@ -220,7 +221,9 @@ body {
     background-color: palevioletred; }
 
 footer {
-  color: gainsboro;
-  font-size: 1rem; }
+  text-align: center;
+  color: #ccc;
+  font-size: 1rem;
+  padding-top: 2rem; }
   footer span {
-    color: palevioletred; }
+    color: rgba(219, 112, 147, 0.5); }
