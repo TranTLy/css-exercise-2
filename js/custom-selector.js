@@ -11,9 +11,10 @@ function getAllOptions(selectorElement) {
 
 function onSelectOption () {
     const value = this.getAttribute('data')
+    const label = this.innerHTML
     const selectElement = this.parentNode.parentNode.parentNode.getElementsByTagName("select")[0]
     selectElement.value = value
-    this.parentNode.parentNode.getElementsByClassName("placeholder")[0].innerHTML= value
+    this.parentNode.parentNode.getElementsByClassName("placeholder")[0].innerHTML= label
     
     const displayedSelectElement = this.parentNode.parentNode.getElementsByClassName("options")[0]
     const optionElements = displayedSelectElement.childNodes
@@ -50,7 +51,6 @@ function createPlaceholderForSelectElement (value) {
 }
 
 function toggleSelect (e) {
-    console.log(e)
     this.classList.toggle('open')
 }
 
@@ -60,7 +60,6 @@ function createCustomSelector() {
         const selectorElement = document.querySelector('select')
 
         const options = getAllOptions(selectorElement)
-        console.log("options: ", options)
         const newSelect = document.createElement('div')
         newSelect.classList.add('custom-select')
         
