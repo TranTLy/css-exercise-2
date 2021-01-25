@@ -59,34 +59,38 @@ body {
   padding: 0.3rem 0;
   display: flex;
   align-items: center;
-  cursor: pointer; }
+  position: relative; }
   .custom-radio-btns .custom-radio-btn input {
+    cursor: pointer;
     position: relative;
     width: 30px;
     height: 30px;
-    margin-right: 15px; }
-    .custom-radio-btns .custom-radio-btn input:hover::before {
-      background: gray; }
-    .custom-radio-btns .custom-radio-btn input::before {
+    margin-right: 15px;
+    z-index: 10;
+    opacity: 0;
+    border-radius: 50%; }
+  .custom-radio-btns .custom-radio-btn .radio-decoration {
+    position: absolute;
+    content: "";
+    width: 30px;
+    height: 30px;
+    background: lightgray;
+    transition: all 0.5s;
+    border-radius: 50%; }
+  .custom-radio-btns .custom-radio-btn input:hover + .radio-decoration {
+    background: gray; }
+  .custom-radio-btns .custom-radio-btn input:checked + .radio-decoration {
+    background: lightskyblue; }
+    .custom-radio-btns .custom-radio-btn input:checked + .radio-decoration::after {
       position: absolute;
       content: "";
-      width: 30px;
-      height: 30px;
-      background: lightgray;
-      transition: all .2s;
-      border-radius: 50%; }
-    .custom-radio-btns .custom-radio-btn input:checked::before {
-      background: lightskyblue; }
-    .custom-radio-btns .custom-radio-btn input:checked::after {
-      position: absolute;
-      content: "";
-      background-color: palevioletred;
-      border-radius: 50%;
-      width: 15px;
-      height: 15px;
-      left: 50%;
+      width: calc(30px - 12px);
+      height: calc(30px - 12px);
       top: 50%;
-      transform: translate(-50%, -50%); }
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: palevioletred;
+      border-radius: 50%; }
 
 .custom-selects .custom-select-wrap {
   margin-bottom: 1rem; }

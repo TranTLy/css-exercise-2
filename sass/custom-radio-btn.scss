@@ -6,41 +6,41 @@ $size-radio-btn: 30px;
         padding: 0.3rem 0;
         display: flex;
         align-items: center;
-        cursor: pointer;
+        position: relative;
         input {
+            cursor: pointer;
             position: relative;
             width: $size-radio-btn;
             height: $size-radio-btn;
             margin-right: 15px;
-            &:hover {
-                &::before {
-                    background: gray;
-                }
-            }
-            &::before {
+            z-index: 10;
+            opacity: 0;
+            border-radius: 50%;
+        }
+        .radio-decoration {
+            position: absolute;
+            content: "";
+            width: $size-radio-btn;
+            height: $size-radio-btn;
+            background: lightgray;
+            transition: all 0.5s;
+            border-radius: 50%;
+        }
+        input:hover + .radio-decoration {
+            background: gray;
+        }
+        input:checked + .radio-decoration {
+            background: lightskyblue;
+            &::after {
                 position: absolute;
                 content: "";
-                width: $size-radio-btn;
-                height: $size-radio-btn;
-                background: lightgray;
-                transition: all .2s;
+                width: calc(#{$size-radio-btn} - 12px);
+                height: calc(#{$size-radio-btn} - 12px);
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                background: palevioletred;
                 border-radius: 50%;
-            }
-            &:checked {
-                &::before {
-                    background: lightskyblue;
-                }
-                &::after {
-                    position: absolute;
-                    content: "";
-                    background-color: palevioletred;
-                    border-radius: 50%;
-                    width: 15px;
-                    height: 15px;
-                    left: 50%;
-                    top: 50%;
-                    transform: translate(-50%, -50%);
-                }
             }
         }
     }
