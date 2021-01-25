@@ -23,24 +23,27 @@ body {
   padding: 0.3rem 0;
   display: flex;
   align-items: center;
-  cursor: pointer; }
+  position: relative; }
   .custom-checkboxes .custom-checkbox input {
+    cursor: pointer;
     position: relative;
     width: 30px;
     height: 30px;
-    margin-right: 15px; }
-    .custom-checkboxes .custom-checkbox input:hover::before {
-      background: gray; }
-    .custom-checkboxes .custom-checkbox input::before {
-      position: absolute;
-      content: "";
-      width: 30px;
-      height: 30px;
-      background: lightgray;
-      transition: all .2s; }
-    .custom-checkboxes .custom-checkbox input:checked::before {
-      background: lightskyblue; }
-    .custom-checkboxes .custom-checkbox input:checked::after {
+    margin-right: 15px;
+    z-index: 10;
+    opacity: 0; }
+  .custom-checkboxes .custom-checkbox .checkbox-decoration {
+    position: absolute;
+    content: "";
+    width: 30px;
+    height: 30px;
+    background: lightgray;
+    transition: all 0.5s; }
+  .custom-checkboxes .custom-checkbox input:hover + .checkbox-decoration {
+    background: gray; }
+  .custom-checkboxes .custom-checkbox input:checked + .checkbox-decoration {
+    background: lightskyblue; }
+    .custom-checkboxes .custom-checkbox input:checked + .checkbox-decoration::after {
       position: absolute;
       content: "";
       border: solid palevioletred;

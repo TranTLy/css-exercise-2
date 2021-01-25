@@ -6,40 +6,39 @@ $size-checkbox: 30px;
         padding: 0.3rem 0;
         display: flex;
         align-items: center;
-        cursor: pointer;
+        position: relative;
         input {
+            cursor: pointer;
             position: relative;
             width: $size-checkbox;
             height: $size-checkbox;
             margin-right: 15px;
-            &:hover {
-                &::before {
-                    background: gray;
-                }
-            }
-            &::before {
+            z-index: 10;
+            opacity: 0;
+        }
+        .checkbox-decoration {
+            position: absolute;
+            content: "";
+            width: $size-checkbox;
+            height: $size-checkbox;
+            background: lightgray;
+            transition: all 0.5s;
+        }
+        input:hover + .checkbox-decoration {
+            background: gray;
+        }
+        input:checked + .checkbox-decoration {
+            background: lightskyblue;
+            &::after {
                 position: absolute;
                 content: "";
-                width: $size-checkbox;
-                height: $size-checkbox;
-                background: lightgray;
-                transition: all .2s;
-            }
-            &:checked {
-                &::before {
-                    background: lightskyblue;
-                }
-                &::after {
-                    position: absolute;
-                    content: "";
-                    border: solid palevioletred;
-                    border-width: 0 3px 3px 0;
-                    transform: rotate(45deg);
-                    width: 8px;
-                    height: 18px;
-                    left: 32%;
-                    top: 5%;
-                }
+                border: solid palevioletred;
+                border-width: 0 3px 3px 0;
+                transform: rotate(45deg);
+                width: 8px;
+                height: 18px;
+                left: 32%;
+                top: 5%;
             }
         }
     }
